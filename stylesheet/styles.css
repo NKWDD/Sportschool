@@ -1,0 +1,315 @@
+/*
+ Auteur: Kamil Kala
+ Datum: 6-03-2024
+ Klas: IO1S1AV
+ */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* Importeer lettertypen van Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+/* Header*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Zorg ervoor dat de header bovenop andere elementen ligt */
+}
+
+/* Navigatie */
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* Navigatie */
+.nav-links li {
+    margin-right: 25px; /* Maak de ruimte tussen de navigatielinks iets kleiner */
+}
+/* Navigatie */
+.nav-links li:last-child {
+    margin-right: 0;
+}
+/* Navigatie */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+/* Navigatie */
+.navigation {
+    background-color: rgba(49, 49, 49, 0.8); /* Grijze kleur met een lichte transparantie */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px; /* Voeg marges toe om de header van de rest van de content te scheiden */
+    position: relative;
+    z-index: 1; /* Zorgt ervoor dat de navigatie bovenop de achtergrond wordt weergegeven */
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
+}
+/* Navigatie */
+.grey-text
+{
+    color: rgb(195, 195, 195)
+}
+/* Navigatie logo */
+.logo {
+    padding: 10px; /* Ruimte rondom het logo */
+}
+/* Navigatie logo */
+.logo img {
+    max-height: 70px; /* Grootte van je logo */
+}
+
+/* Mediaquery voor schermen kleiner dan 600px (typisch voor telefoons) */
+@media only screen and (max-width: 600px) {
+    .nav-links li {
+        margin-right: 10px; /* Maak de ruimte tussen de navigatielinks nog kleiner voor kleinere schermen */
+    }
+
+    .nav-links a {
+        font-size: 4px; /* Verklein de lettergrootte voor kleinere schermen */
+    }
+
+    .logo img {
+        max-height: 15px; /* Pas de grootte van het logo aan voor kleinere schermen */
+    }
+}
+/* Slides */
+.container {
+    position: relative;
+}
+/* Background slides */
+.slide-1 {
+    background: url('../images/header-ts073-maik-mina-boxing-01.jpg');
+}
+.slide-2 {
+    background: url('../images/header-ts073-mina-touwen-04.jpg');
+}
+.slide-3 {
+    background: url('../images/header-ts073-maik-power-02.jpg');
+}
+.slide-4 {
+    background: url('../images/trainstation073-header-05.jpg');
+}
+
+/* Buttons op slides */
+.orange-button {
+    background-color: rgb(255, 94, 0);
+    color: white;
+    padding: 20px 100px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: slideInFromRight 0.5s ease forwards;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Andere kleur als je op button komt te staan */
+.orange-button:hover {
+    background-color: rgb(243, 65, 65); /* Kleur veranderen naar groen wanneer erover wordt bewogen */
+}
+
+/* Slide */
+.slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+/* Text op de dias */
+.caption {
+    background: rgba(0, 0, 0, 0.03);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Om ervoor te zorgen dat de inhoud verticaal gecentreerd wordt */
+}
+/* Text op de dias */
+.caption h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    padding: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+/* Text op de dias */
+.caption p {
+    max-width: 600px;
+    width: 90%;
+    margin: 0px auto;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight:400;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Buttons om dias te veranderen*/
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+}
+/* Buttons*/
+.arrow img {
+    width: 50px;
+}
+/* Buttons hover*/
+.arrow:hover {
+    background: rgba(0, 0, 0, .4);
+}
+/* Linker button*/
+.l {
+    left: 0;
+}
+/* Rechter button*/
+.r {
+    right: 0;
+}
+
+/* Animaties van dias rechts*/
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Animaties van dias linkss*/
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Animatie van de tekst, komt van rechts*/
+.animated-text-p {
+    animation: slideInFromRight 0.5s ease forwards;
+}
+/* Animatie van de tekst, komt van links*/
+.animated-text-h3 {
+    animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.caption {
+    text-align: center;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Stijlen voor de calculator */
+.calculator {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 125px;
+}
+.calculator h2 {
+    text-align: center;
+}
+.calculator input[type="number"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.calculator input[type="submit"] {
+    width: 100%;
+    background-color: rgb(255, 94, 0);
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.calculator input[type="submit"]:hover {
+    background-color: rgb(243, 65, 65);
+    color: white;
+}
+
+.calculator label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.calculator select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.calculator select:focus {
+    outline: none;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.slide .banner {
+    position: absolute;
+    margin-top: 125px;
+    left: 60%;
+    border-radius: 10px;
+    margin-left: 240px;
+}
+
+.slide:hover .banner {
+    display: block;
+    animation: rotate 0.2s linear;
+}
+
+/* Animaies van de roze knop*/
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
